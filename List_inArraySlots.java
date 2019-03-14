@@ -23,7 +23,18 @@ public class List_inArraySlots {
       return s+= "]";
   }
 
-  public boolean add( int type   // same meaning as in typeOfElements
+  public boolean add (Object element) {
+
+	if (list.length == filledElements)
+	expand();
+
+	list[filledElements] = element;
+	filledElements++;
+
+	return true;
+  }
+
+  /* public boolean add( int type   // same meaning as in typeOfElements
                               , Integer intValue
                               , Double doubleValue
                               , String stringValue
@@ -42,6 +53,7 @@ public class List_inArraySlots {
        filledElements++;
        return true;
      } //element each time an add method is invoked.
+    */
 
     private void expand() {
 	      Object[] expandedList = new Object [list.length * 2];
